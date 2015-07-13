@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>jquery.dstyle</title>
+	<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+	
+	<script type="text/javascript" src="js/app/jquery.dstyle.addIdx.js"></script>
+	<script type="text/javascript" src="js/app/jquery.dstyle.radioClass.js"></script>
+</head>
+<body>
+<h2>jquery.Fn.addIdx</h2>
+<p>index()는 each가 아닌 , 자신의 위치의 인덱스를 가져온다면 , addIdx는 each상의 순서를 저장하게 됨.</p>
+<ul>
+	<li><span></span></li>
+	<li><span></span></li>
+	<li><span></span></li>
+	<li><span></span></li>
+	<li><span></span></li>
+	<li><span></span></li>
+	<li><span></span></li>
+	<li><span></span></li>
+	<li><span></span></li>
+</ul>
+
+<script type="text/javascript">
+$("li>span").addIdx().each(function(){
+	var index = $(this).index(); // li밑에 span이기 때문에 index가 0이다.
+	var idx = this.idx; // this안에 each의 순서가 저장되어있다.
+	var txt = "index:"+index+", addIdx:"+idx;
+	$(this).html(txt);
+});
+</script>
+
+
+</body>
+</html>
